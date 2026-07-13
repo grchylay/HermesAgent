@@ -1,0 +1,13 @@
+# 课程环境：DeepSeek
+# - key 从 workspace\.env 的 OPENAI_API_KEY 读取
+# - base_url 指向 DeepSeek OpenAI 兼容端点
+model:
+  provider: custom
+  default: deepseek-chat
+  base_url: https://api.deepseek.com
+
+platforms:
+  api_server:
+    port: 8642
+    enabled: true
+mcp_servers: {}
