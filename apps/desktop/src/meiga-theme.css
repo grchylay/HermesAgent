@@ -1,0 +1,205 @@
+/* ══════════════════════════════════════════════
+   Meiga Agent — Elegant Floral Theme
+   ══════════════════════════════════════════════ */
+
+/* ── Full window — dark floral gradient ── */
+html, body, #root {
+  background: #0d0b1a !important;
+  color: #ffffff !important;
+}
+
+/* ── Boot/install/onboarding overlays — dark cards with rich purple text ── */
+.bg-card, [class*="bg-card"], .bg-background\/90 {
+  background: #1a1030 !important;
+  border-color: rgba(139, 124, 255, 0.15) !important;
+  color: #ffffff !important;
+}
+.bg-card *, .bg-background\/90 * {
+  color: #d0c0f0 !important;
+}
+.bg-card h1, .bg-card h2, .bg-card h3,
+.bg-background\/90 h1, .bg-background\/90 h2, .bg-background\/90 h3 {
+  color: #ffffff !important;
+}
+.bg-card .text-muted-foreground,
+.bg-background\/90 .text-muted-foreground {
+  color: #b8a0d8 !important;
+}
+.bg-card code, .bg-card pre,
+.bg-background\/90 code, .bg-background\/90 pre {
+  color: #c8b0e8 !important;
+  background: #0d0a18 !important;
+}
+
+/* ── All other text white ── */
+html, body, #root, div, p, span, h1, h2, h3, h4, h5, h6,
+label, button, a, li, td, th, input, textarea, select {
+  color: #ffffff !important;
+}
+
+/* But keep muted text slightly dimmer */
+.text-muted-foreground { color: #c0bcd0 !important; }
+.text-midground { color: #d8d4e8 !important; }
+.text-foreground { color: #ffffff !important; }
+
+/* Code blocks keep syntax coloring */
+code, pre, [class*="shiki"] span { color: revert !important; }
+
+/* ── Chat surface — rich dark background ── */
+[data-slot="aui_intro"],
+div[class*="flex"][class*="flex-col"][class*="min-h-0"] {
+  background:
+    radial-gradient(ellipse 600px 400px at 15% 10%, rgba(230, 180, 200, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 350px at 80% 85%, rgba(170, 150, 230, 0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 300px 250px at 70% 20%, rgba(240, 200, 220, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 200px 200px at 40% 60%, rgba(200, 180, 240, 0.06) 0%, transparent 50%),
+    linear-gradient(175deg, #100d22 0%, #0f0c1e 30%, #110e24 60%, #0e0b1c 100%) !important;
+}
+
+/* ── Titlebar ── */
+[data-drag-region] {
+  background: linear-gradient(180deg, rgba(139, 124, 255, 0.08) 0%, transparent 100%) !important;
+  border-bottom: 1px solid rgba(139, 124, 255, 0.08) !important;
+}
+
+/* ── Sidebar ── */
+aside, [data-sidebar] {
+  background: #0c0a18 !important;
+  border-right: 1px solid rgba(139, 124, 255, 0.06) !important;
+}
+
+/* ── Chat messages — pink text ── */
+[data-message-assistant] {
+  background: rgba(139, 124, 255, 0.04) !important;
+  border: 1px solid rgba(139, 124, 255, 0.06) !important;
+  border-radius: 12px !important;
+}
+[data-message-assistant] * {
+  color: #f0a0c0 !important;
+}
+[data-message-user] * {
+  color: #e8c0d8 !important;
+}
+
+/* Code blocks inside messages keep readability */
+[data-message-assistant] code,
+[data-message-assistant] pre,
+[data-message-user] code,
+[data-message-user] pre {
+  color: #f8e0f0 !important;
+}
+
+/* ── Composer ── */
+[data-composer] textarea,
+[data-composer] [contenteditable] {
+  border: 1.5px solid rgba(139, 124, 255, 0.15) !important;
+  border-radius: 14px !important;
+  background: rgba(20, 16, 40, 0.8) !important;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease !important;
+}
+[data-composer]:focus-within textarea,
+[data-composer]:focus-within [contenteditable] {
+  border-color: rgba(139, 124, 255, 0.4) !important;
+  box-shadow: 0 0 0 3px rgba(139, 124, 255, 0.08), 0 4px 20px rgba(139, 124, 255, 0.06) !important;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(139, 124, 255, 0.20); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(139, 124, 255, 0.38); }
+
+/* ── Selection ── */
+::selection { background: rgba(139, 124, 255, 0.22); color: #e8e4ff; }
+
+/* ── Links ── */
+a { color: #9b8cf8; transition: color 0.2s; }
+a:hover { color: #b8acfa; }
+
+/* ── Buttons ── */
+button[data-primary],
+.bg-primary {
+  background: linear-gradient(135deg, #8b7cff, #a78bfa) !important;
+  box-shadow: 0 2px 8px rgba(139, 124, 255, 0.15) !important;
+}
+button[data-primary]:hover {
+  box-shadow: 0 4px 16px rgba(139, 124, 255, 0.28) !important;
+}
+
+/* ══════════════════════════════════════════════
+   Floating decorative orbs — full chat area
+   ══════════════════════════════════════════════ */
+
+[data-slot="aui_intro"] {
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+/* Orb 1 - large soft pink, upper left */
+[data-slot="aui_intro"]::before {
+  content: '';
+  position: fixed;
+  top: 60px;
+  left: 10%;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240, 185, 210, 0.28) 0%, rgba(220, 160, 200, 0.10) 35%, transparent 65%);
+  pointer-events: none;
+  animation: meiga-float-1 14s ease-in-out infinite;
+}
+
+/* Orb 2 - soft lavender, lower right */
+[data-slot="aui_intro"]::after {
+  content: '';
+  position: fixed;
+  bottom: 80px;
+  right: 12%;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(180, 160, 235, 0.22) 0%, rgba(150, 140, 220, 0.08) 40%, transparent 65%);
+  pointer-events: none;
+  animation: meiga-float-2 16s ease-in-out infinite;
+}
+
+/* Orb 3 - small rosy accent, top right */
+[data-slot="aui_intro"] p:first-of-type::before {
+  content: '';
+  position: fixed;
+  top: 100px;
+  right: 25%;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 210, 230, 0.20) 0%, transparent 65%);
+  pointer-events: none;
+  animation: meiga-float-3 11s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes meiga-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(30px, -25px) scale(1.06); }
+  40% { transform: translate(-15px, -40px) scale(0.94); }
+  60% { transform: translate(-35px, 10px) scale(1.04); }
+  80% { transform: translate(10px, 25px) scale(0.97); }
+}
+
+@keyframes meiga-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-25px, -30px) scale(1.07); }
+  50% { transform: translate(20px, -15px) scale(0.93); }
+  75% { transform: translate(30px, 20px) scale(1.05); }
+}
+
+@keyframes meiga-float-3 {
+  0%, 100% { transform: translate(0, 0); opacity: 0.5; }
+  50% { transform: translate(-35px, -25px); opacity: 0.85; }
+}
+
+/* Z-index stacking */
+[data-slot="aui_intro"] p {
+  position: relative;
+  z-index: 2;
+}
