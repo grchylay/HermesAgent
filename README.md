@@ -1,8 +1,8 @@
+# Meiga Agent 🌸
+
 <p align="center">
   <img src="meiga-screenshot.png" alt="Meiga Agent" width="100%">
 </p>
-
-# Meiga Agent 🌸
 
 <p align="center">
   <b>A beautifully customized AI agent desktop app, reborn from Hermes Agent.</b><br>
