@@ -2,48 +2,75 @@
    Meiga Agent — Elegant Floral Theme
    ══════════════════════════════════════════════ */
 
-/* ── Full window — dark floral gradient ── */
+/* ══════════════════════════════════════════════
+   Meiga Agent — CSS Variable Color Override
+   Works WITH the design system, no !important wars.
+   ══════════════════════════════════════════════ */
+
+/* ── Dark background ── */
 html, body, #root {
   background: #0d0b1a !important;
-  color: #ffffff !important;
 }
 
-/* ── Boot/install/onboarding overlays — dark cards with rich purple text ── */
+/* ── All backgrounds — dark soft purple ── */
+:root {
+  --dt-background: #1a1430;
+  --dt-card: #1e1838;
+  --ui-bg-chrome: #1a1430;
+  --ui-bg-sidebar: #161028;
+  --ui-bg-editor: #1e1838;
+  --ui-bg-card: #1e1838;
+  --ui-bg-elevated: #221c40;
+  --ui-bg-input: #1e1838;
+  --ui-surface-background: #1e1838;
+  --ui-sidebar-surface-background: #161028;
+  --ui-chat-surface-background: #1a1430;
+  --ui-editor-surface-background: #1a1430;
+  --ui-chat-bubble-background: #221c40;
+  --ui-chat-bubble-opaque-background: #1e1838;
+  --ui-inline-code-background: rgba(255, 255, 255, 0.06);
+  --ui-inline-code-foreground: #c8b0e8;
+  --theme-background-seed: #1a1430;
+  --theme-sidebar-seed: #161028;
+  --theme-card-seed: #1e1838;
+  --theme-elevated-seed: #221c40;
+  --theme-bubble-seed: #221c40;
+  --theme-neutral-chrome: #161028;
+  --theme-neutral-sidebar: #120e22;
+  --theme-neutral-card: #1a1430;
+}
+
+/* ── All text — soft lavender ── */
+:root {
+  --dt-foreground: #c8b0e8;
+  --ui-text-primary: #c8b0e8;
+  --ui-text-secondary: #b8a0d8;
+  --ui-text-tertiary: #a890c8;
+  --ui-text-quaternary: #9880b8;
+  --dt-muted-foreground: #b8a0d8;
+  --theme-foreground: #c8b0e8;
+}
+
+/* ── Chat message bubbles — soft card styling ── */
+[data-message-assistant] {
+  background: rgba(139, 124, 255, 0.04) !important;
+  border: 1px solid rgba(139, 124, 255, 0.06) !important;
+  border-radius: 12px !important;
+}
+
+/* ── Code blocks — keep syntax colors ── */
+code, pre, [class*="shiki"] span { color: revert !important; }
+
+/* ── Boot/install overlays — dark cards ── */
 .bg-card, [class*="bg-card"], .bg-background\/90 {
   background: #1a1030 !important;
   border-color: rgba(139, 124, 255, 0.15) !important;
-  color: #ffffff !important;
-}
-.bg-card *, .bg-background\/90 * {
-  color: #d0c0f0 !important;
-}
-.bg-card h1, .bg-card h2, .bg-card h3,
-.bg-background\/90 h1, .bg-background\/90 h2, .bg-background\/90 h3 {
-  color: #ffffff !important;
-}
-.bg-card .text-muted-foreground,
-.bg-background\/90 .text-muted-foreground {
-  color: #b8a0d8 !important;
 }
 .bg-card code, .bg-card pre,
 .bg-background\/90 code, .bg-background\/90 pre {
   color: #c8b0e8 !important;
   background: #0d0a18 !important;
 }
-
-/* ── All other text white ── */
-html, body, #root, div, p, span, h1, h2, h3, h4, h5, h6,
-label, button, a, li, td, th, input, textarea, select {
-  color: #ffffff !important;
-}
-
-/* But keep muted text slightly dimmer */
-.text-muted-foreground { color: #c0bcd0 !important; }
-.text-midground { color: #d8d4e8 !important; }
-.text-foreground { color: #ffffff !important; }
-
-/* Code blocks keep syntax coloring */
-code, pre, [class*="shiki"] span { color: revert !important; }
 
 /* ── Chat surface — rich dark background ── */
 [data-slot="aui_intro"],
@@ -75,10 +102,10 @@ aside, [data-sidebar] {
   border-radius: 12px !important;
 }
 [data-message-assistant] * {
-  color: #f0a0c0 !important;
+  color: #c8b0e8 !important;
 }
 [data-message-user] * {
-  color: #e8c0d8 !important;
+  color: #c8b0e8 !important;
 }
 
 /* Code blocks inside messages keep readability */
@@ -86,16 +113,21 @@ aside, [data-sidebar] {
 [data-message-assistant] pre,
 [data-message-user] code,
 [data-message-user] pre {
-  color: #f8e0f0 !important;
+  color: #b8a0d8 !important;
 }
 
-/* ── Composer ── */
+/* ── Composer — dark purple input text ── */
 [data-composer] textarea,
 [data-composer] [contenteditable] {
   border: 1.5px solid rgba(139, 124, 255, 0.15) !important;
   border-radius: 14px !important;
   background: rgba(20, 16, 40, 0.8) !important;
+  color: #c8b0e8 !important;
   transition: border-color 0.35s ease, box-shadow 0.35s ease !important;
+}
+[data-composer] textarea::placeholder,
+[data-composer] [contenteditable]:empty::before {
+  color: rgba(180, 160, 220, 0.5) !important;
 }
 [data-composer]:focus-within textarea,
 [data-composer]:focus-within [contenteditable] {
@@ -109,17 +141,27 @@ aside, [data-sidebar] {
 ::-webkit-scrollbar-thumb { background: rgba(139, 124, 255, 0.20); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(139, 124, 255, 0.38); }
 
-/* ── Selection ── */
-::selection { background: rgba(139, 124, 255, 0.22); color: #e8e4ff; }
+/* ── All icons — white ── */
+svg, [class*="icon"], [class*="codicon"], [class*="tabler-icon"],
+[class*="titlebar"], [class*="window-control"], [class*="sidebar"] svg,
+button svg, [role="button"] svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
 
-/* ── Links ── */
-a { color: #9b8cf8; transition: color 0.2s; }
-a:hover { color: #b8acfa; }
+/* ── Selection — white text ── */
+::selection { background: rgba(139, 124, 255, 0.22); color: #ffffff; }
 
-/* ── Buttons ── */
+/* ── Links — white ── */
+a { color: #ffffff; transition: color 0.2s; }
+a:hover { color: #d0c0f0; }
+
+/* ── Buttons — white text ── */
 button[data-primary],
 .bg-primary {
-  background: linear-gradient(135deg, #8b7cff, #a78bfa) !important;
+  background: linear-gradient(135deg, #6d5cf0, #8b7cff) !important;
+  color: #ffffff !important;
   box-shadow: 0 2px 8px rgba(139, 124, 255, 0.15) !important;
 }
 button[data-primary]:hover {
