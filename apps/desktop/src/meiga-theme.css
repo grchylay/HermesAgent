@@ -2,13 +2,43 @@
    Meiga Agent — Final Theme v2
    ══════════════════════════════════════════════ */
 
-/* ── Dark background ── */
-html, body, #root {
-  background: #0d0b1a !important;
+/* ── Light mode — soft lavender on white ── */
+:root {
+  --dt-background: #f8f6fc;
+  --dt-card: #ffffff;
+  --ui-bg-chrome: #f8f6fc;
+  --ui-bg-sidebar: #f0edf8;
+  --ui-bg-editor: #ffffff;
+  --ui-bg-card: #ffffff;
+  --ui-bg-elevated: #ffffff;
+  --ui-bg-input: #f8f6fc;
+  --ui-surface-background: #ffffff;
+  --ui-sidebar-surface-background: #f0edf8;
+  --ui-chat-surface-background: #f8f6fc;
+  --ui-editor-surface-background: #f8f6fc;
+  --ui-chat-bubble-background: #f0edf8;
+  --ui-chat-bubble-opaque-background: #ffffff;
+  --ui-inline-code-background: rgba(139, 124, 255, 0.08);
+  --ui-inline-code-foreground: #3d1a5c;
+  --theme-background-seed: #f8f6fc;
+  --theme-sidebar-seed: #f0edf8;
+  --theme-card-seed: #ffffff;
+  --theme-elevated-seed: #ffffff;
+  --theme-bubble-seed: #f0edf8;
+  --theme-neutral-chrome: #f5f3fa;
+  --theme-neutral-sidebar: #ede8f5;
+  --theme-neutral-card: #faf8ff;
+  --dt-foreground: #3d1a5c;
+  --ui-text-primary: #3d1a5c;
+  --ui-text-secondary: #5c2878;
+  --ui-text-tertiary: #7a4a9a;
+  --ui-text-quaternary: #9a6ab8;
+  --dt-muted-foreground: #5c2878;
+  --theme-foreground: #3d1a5c;
 }
 
-/* ── All backgrounds — dark soft purple ── */
-:root {
+/* ── Dark mode — dark purple with lavender text ── */
+.dark :root, .dark {
   --dt-background: #1a1430;
   --dt-card: #1e1838;
   --ui-bg-chrome: #1a1430;
@@ -33,10 +63,6 @@ html, body, #root {
   --theme-neutral-chrome: #161028;
   --theme-neutral-sidebar: #120e22;
   --theme-neutral-card: #1a1430;
-}
-
-/* ── All text — soft lavender ── */
-:root {
   --dt-foreground: #c8b0e8;
   --ui-text-primary: #c8b0e8;
   --ui-text-secondary: #b8a0d8;
@@ -46,10 +72,19 @@ html, body, #root {
   --theme-foreground: #c8b0e8;
 }
 
-/* ── All icons — white ── */
-svg, [class*="icon"], [class*="codicon"], [class*="tabler-icon"],
-[class*="titlebar"], [class*="window-control"], [class*="sidebar"] svg,
-button svg, [role="button"] svg {
+/* ── Light mode icons — dark purple ── */
+:root svg, :root [class*="icon"], :root [class*="codicon"], :root [class*="tabler-icon"],
+:root [class*="titlebar"], :root [class*="window-control"], :root [class*="sidebar"] svg,
+:root button svg, :root [role="button"] svg {
+  color: #3d1a5c !important;
+  fill: #3d1a5c !important;
+  stroke: #3d1a5c !important;
+}
+
+/* ── Dark mode icons — white ── */
+.dark svg, .dark [class*="icon"], .dark [class*="codicon"], .dark [class*="tabler-icon"],
+.dark [class*="titlebar"], .dark [class*="window-control"], .dark [class*="sidebar"] svg,
+.dark button svg, .dark [role="button"] svg {
   color: #ffffff !important;
   fill: #ffffff !important;
   stroke: #ffffff !important;
