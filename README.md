@@ -2,57 +2,70 @@
   <img src="screenshot.png" alt="Meiga Agent" width="100%">
 </p>
 
-# Meiga Agent ☤
+# Meiga Agent 🌸
 
 <p align="center">
-  <b>A beautifully customized AI agent, reborn from Hermes Agent.</b><br>
-  Dark floral theme · DeepSeek-powered · Windows desktop ready
+  <b>A beautifully customized AI agent desktop app, reborn from Hermes Agent.</b><br>
+  Flower icon · Light/Dark theme · DeepSeek-powered · Windows installer ready
 </p>
 
 ---
 
-## ✨ What makes Meiga special
+## ✨ Features
 
 | Feature | Detail |
 |---------|--------|
-| 🌸 **Elegant dark theme** | Rich purple backgrounds with floating decorative orbs |
-| 💎 **Custom neon icon** | Hand-crafted "H" wordmark in electric blue and violet |
-| 🤖 **DeepSeek V4** | Powered by `deepseek-chat` via the OpenAI-compatible API |
-| 🖥️ **Desktop app** | Full Electron desktop experience with pink chat history |
-| 🧠 **Self-improving agent** | Skills, memory, scheduled jobs, and cross-session learning |
-| 🔧 **40+ tools** | Terminal, browser, file operations, code execution, and more |
+| 🌸 **Flower icon** | Custom 6-petal lavender flower icon (ICO/PNG/ICNS) |
+| 🎨 **Light & Dark mode** | Soft lavender light mode + deep purple dark mode with floating orbs |
+| 💜 **Lavender text** | `#c8b0e8` text on dark purple backgrounds |
+| 🤖 **DeepSeek V4** | Powered by `deepseek-chat` via OpenAI-compatible API |
+| 🖥️ **Desktop app** | Full Electron desktop with installer (NSIS) |
+| 🧠 **Self-improving agent** | Skills, memory, scheduled jobs, cross-session learning |
+| 🔧 **40+ tools** | Terminal, browser, file operations, code execution |
 
 ---
 
-## Quick Start (Windows)
+## 📥 Download & Install
+
+Download the latest installer:
+
+**[Meiga-0.17.0-win-x64.exe](https://github.com/grchylay/HermesAgent/releases)**
+
+Or build from source:
+
+```bash
+git clone -b version/v0.1.1 https://github.com/grchylay/HermesAgent.git
+cd HermesAgent
+```
+
+---
+
+## Quick Start
 
 ### Prerequisites
 
-- **Python 3.11** (via `uv python install 3.11`)
-- **Node.js** ≥ 20 (v24.x recommended)
+- **Python 3.11** (`uv python install 3.11`)
+- **Node.js** ≥ 20
 - **uv** package manager
-- **Git Bash** or PowerShell
 
-### CLI Mode
+### CLI
 
 ```powershell
-.\run.ps1              # Start interactive terminal
+.\run.ps1              # Interactive terminal
 .\run.ps1 doctor       # Health check
 .\run.ps1 -z "Hello"   # One-shot query
 ```
 
-### Desktop App
+### Desktop
 
 ```cmd
-cd /d D:\tmp\RuyiHermesAgent\apps\desktop
-set HERMES_DESKTOP_HERMES_ROOT=D:\tmp\RuyiHermesAgent
-set HERMES_HOME=D:\tmp\RuyiHermesAgent\workspace
-node_modules\electron\dist\electron.exe .
+cd apps\desktop
+set HERMES_DESKTOP_HERMES_ROOT=%CD%\..\..
+set HERMES_HOME=%CD%\..\..\workspace
+npx electron .
 ```
 
 ### Configuration
-
-Set your API key in `workspace\.env`:
 
 ```env
 OPENAI_API_KEY=sk-your-deepseek-key
@@ -62,54 +75,38 @@ OPENAI_BASE_URL=https://api.deepseek.com
 
 ---
 
-## 🎨 Customization
+## Build Installer
 
-| Element | Style |
-|---------|-------|
-| Background | Dark floral with floating pink + lavender orbs |
-| Chat text | Soft pink `#f0a0c0` |
-| UI text | White |
-| Cards/overlays | Rich dark purple |
-| Wordmark | **MEIGA AGENT** in Collapse font |
-| Window icon | Custom neon "H" (6 sizes, ICO/PNG/ICNS) |
-| Scrollbar | Thin lavender gradient |
-
----
-
-## 🏗️ Build
-
-```bash
-# Install workspace dependencies
-cd D:\tmp\RuyiHermesAgent
-npm install
-
-# Build desktop app
+```cmd
 cd apps\desktop
+npm install
 npm run build
+npm run dist:win:nsis
 ```
 
+Output: `release\Meiga-0.17.0-win-x64.exe`
+
 ---
 
-## 📦 Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
-| **Desktop shell** | Electron 40 + React 19 + Vite 8 |
-| **Agent core** | Python (AIAgent + model_tools + toolsets) |
-| **Gateway** | FastAPI + WebSocket JSON-RPC |
-| **Package manager** | uv (Python), npm workspaces (JS) |
-| **Model** | DeepSeek V4 Flash (via `api.deepseek.com`) |
+| Desktop shell | Electron 40 + React 19 + Vite 8 |
+| Agent core | Python (AIAgent + model_tools + toolsets) |
+| Gateway | FastAPI + WebSocket JSON-RPC |
+| Model | DeepSeek V4 Flash |
 
 ---
 
-## 🤝 Credits
+## Credits
 
-Built on the incredible [Hermes Agent](https://github.com/NousResearch/hermes-agent) by [Nous Research](https://nousresearch.com).
+Built on [Hermes Agent](https://github.com/NousResearch/hermes-agent) by [Nous Research](https://nousresearch.com).
 
 Meiga customization by [@grchylay](https://github.com/grchylay).
 
 ---
 
-## 📄 License
+## License
 
 MIT — see [LICENSE](LICENSE).
