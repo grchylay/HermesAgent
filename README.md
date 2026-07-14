@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="screenshot.png" alt="Meiga Agent" width="100%">
+  <img src="meiga-screenshot.png" alt="Meiga Agent" width="100%">
 </p>
 
 # Meiga Agent 🌸
